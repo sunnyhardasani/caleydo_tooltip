@@ -1,0 +1,19 @@
+{
+  "name": "caleydo_tooltip",
+  "version": "0.0.1",
+  "peerDependencies": {
+    "caleydo_web": "*"
+  },
+  "caleydo": {
+    "plugins": {
+      "web": [
+
+      ]
+    },
+    "dependencies": {
+      "web": {
+        "d3": "~3.5.5"
+      }
+    }
+  }
+}
