@@ -7,9 +7,9 @@
  */
 define(['exports', 'd3', 'css!./style'], function (exports, d3) {
   // add the tooltip area to the webpage
-  var tooltip = d3.select("body").append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
+  var tooltip = d3.select('body').append('div')
+    .attr('class', 'tooltip')
+    .style('opacity', 0);
 
   /**
    * returns a D3 compatible call method, which registers itself to show a tooltip upon mouse enter
@@ -25,17 +25,17 @@ define(['exports', 'd3', 'css!./style'], function (exports, d3) {
         mouseenter: function (d, i) {
           tooltip
             .html(toLabel.call(this, d, i))
-            .style("left", (d3.event.pageX + 5) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
+            .style('left', (d3.event.pageX + 5) + 'px')
+            .style('top', (d3.event.pageY - 28) + 'px');
           tooltip.transition()
             .delay(200)
             .duration(200)
-            .style("opacity", 0.9);
+            .style('opacity', 0.9);
         },
         mouseleave: function () {
           tooltip.transition()
             .duration(200)
-            .style("opacity", 0);
+            .style('opacity', 0);
         }
       });
     };
