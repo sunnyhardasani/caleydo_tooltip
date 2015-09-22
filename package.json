@@ -1,18 +1,13 @@
 {
   "name": "caleydo_tooltip",
-  "version": "0.0.1",
-  "license" : "SEE LICENSE IN LICENSE",
+  "version": "0.0.1-alpha",
+  "license": "SEE LICENSE IN LICENSE",
   "repository": "Caleydo/caleydo_tooltip",
-  "dependencies": {
-  },
-  "peerDependencies": {
-
-  },
+  "dependencies": {},
+  "peerDependencies": {},
   "caleydo": {
     "plugins": {
-      "web": [
-
-      ]
+      "web": []
     },
     "dependencies": {
       "web": {
