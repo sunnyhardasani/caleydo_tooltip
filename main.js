@@ -27,7 +27,7 @@ define(['exports', 'd3', 'css!./style'], function (exports, d3) {
             .html(toLabel.call(this, d, i))
             .style('left', (d3.event.pageX + 5) + 'px')
             .style('top', (d3.event.pageY - 28) + 'px');
-          tooltip.transition()
+          tooltip.style('display',null).transition()
             .delay(200)
             .duration(200)
             .style('opacity', 0.9);
@@ -35,7 +35,10 @@ define(['exports', 'd3', 'css!./style'], function (exports, d3) {
         mouseleave: function () {
           tooltip.transition()
             .duration(200)
-            .style('opacity', 0);
+            .style('opacity', 0)
+            .each('end', function() {
+              d3.select(this).style('display', 'none');
+            });
         }
       });
     };
