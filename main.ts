@@ -32,14 +32,14 @@ export function bind<T>(toLabel:((d:T, i:number)=>string) | string, delay = 200)
         tooltip.html(labelfor.call(this, d, i))
           .style('left', (d3.event.pageX + 5) + 'px')
           .style('top', (d3.event.pageY - 28) + 'px');
-        tooltip.style('display', 'block').transition()
+        tooltip.style('display', 'block').interrupt().transition()
           .delay(delay)
           .duration(200)
           .style('opacity', 0.9);
       })
       .on('mouseleave.tooltip', function () {
         const tooltip = getTooltip();
-        tooltip.transition()
+        tooltip.interrupt().transition()
           .duration(200)
           .style('opacity', 0)
           .each('end', function () {
