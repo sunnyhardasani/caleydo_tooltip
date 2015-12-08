@@ -15,7 +15,7 @@ define(["require", "exports", 'd3', "css!./style"], function (require, exports, 
         //wrap as function
         var labelfor = d3.functor(toLabel);
         return function (selection) {
-            selection.on('mouseenter', function (d, i) {
+            selection.on('mouseenter.tooltip', function (d, i) {
                 tooltip
                     .html(labelfor.call(this, d, i))
                     .style('left', (d3.event.pageX + 5) + 'px')
@@ -25,7 +25,7 @@ define(["require", "exports", 'd3', "css!./style"], function (require, exports, 
                     .duration(200)
                     .style('opacity', 0.9);
             })
-                .on('mouseleave', function () {
+                .on('mouseleave.tooltip', function () {
                 tooltip.transition()
                     .duration(200)
                     .style('opacity', 0)

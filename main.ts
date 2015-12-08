@@ -22,7 +22,7 @@ export function bind<T>(toLabel:((d:T, i:number)=>string) | string) {
   const labelfor:((d:T, i:number)=>string) = <any>d3.functor(toLabel);
 
   return function (selection:d3.Selection<T>) {
-    selection.on('mouseenter', function (d:T, i) {
+    selection.on('mouseenter.tooltip', function (d:T, i) {
         tooltip
           .html(labelfor.call(this, d, i))
           .style('left', (d3.event.pageX + 5) + 'px')
@@ -32,7 +32,7 @@ export function bind<T>(toLabel:((d:T, i:number)=>string) | string) {
           .duration(200)
           .style('opacity', 0.9);
       })
-      .on('mouseleave', function () {
+      .on('mouseleave.tooltip', function () {
         tooltip.transition()
           .duration(200)
           .style('opacity', 0)
